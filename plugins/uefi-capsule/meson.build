@@ -23,7 +23,7 @@ if host_machine.system() == 'linux'
     configuration: con2,
     install: true,
     install_tag: 'runtime',
-    install_dir: join_paths(sysconfdir, 'grub.d')
+    install_dir: join_paths(sysconfdir_install, 'grub.d')
   )
 elif host_machine.system() == 'freebsd'
   backend_srcs += 'fu-uefi-capsule-backend-freebsd.c'
@@ -98,7 +98,7 @@ if get_option('plugin_uefi_capsule_splash')
     ],
     install: true,
     install_tag: 'runtime',
-    install_dir: join_paths(datadir, 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd'),
   )
 endif
 

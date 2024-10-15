@@ -29,7 +29,7 @@ if build_standalone
   install_data(
     ['fwupd.conf'],
     install_tag: 'runtime',
-    install_dir: join_paths(sysconfdir, 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd'),
     install_mode: 'rw-r-----',
   )
   plugin_quirks += files('cfi.quirk', 'ds20.quirk', 'power.quirk', 'vendors.quirk')
