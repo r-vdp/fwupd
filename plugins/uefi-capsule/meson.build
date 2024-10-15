@@ -20,7 +20,7 @@ if host_machine.system() == 'linux'
     output: '35_fwupd',
     configuration: con2,
     install: true,
-    install_dir: join_paths(sysconfdir, 'grub.d')
+    install_dir: join_paths(sysconfdir_install, 'grub.d')
   )
 elif host_machine.system() == 'freebsd'
   backend_srcs += 'fu-uefi-backend-freebsd.c'
@@ -93,7 +93,7 @@ if get_option('plugin_uefi_capsule_splash')
       '--out', '@OUTPUT@',
     ],
     install: true,
-    install_dir: join_paths(datadir, 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd'),
   )
 endif
 
@@ -146,4 +146,3 @@ summary({
   'capsule splash': get_option('plugin_uefi_capsule_splash'),
 }, section:'uefi capsule options')
 endif
-

@@ -201,6 +201,12 @@ endif
 mandir = join_paths(prefix, get_option('mandir'))
 localedir = join_paths(prefix, get_option('localedir'))
 
+if get_option('sysconfdir_install') != ''
+  sysconfdir_install = join_paths(prefix, get_option('sysconfdir_install'))
+else
+  sysconfdir_install = sysconfdir
+endif
+
 diffcmd = find_program('diff')
 gio = dependency('gio-2.0', version: '>= 2.72.0')
 giounix = dependency('gio-unix-2.0', version: '>= 2.72.0', required: false)

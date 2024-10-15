@@ -11,14 +11,14 @@ if build_standalone and get_option('lvfs') != 'false'
     output: 'lvfs.conf',
     configuration: con3,
     install: true,
-    install_dir: join_paths(sysconfdir, 'fwupd', 'remotes.d'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd', 'remotes.d'),
   )
   configure_file(
     input: 'lvfs-testing.conf',
     output: 'lvfs-testing.conf',
     configuration: con3,
     install: true,
-    install_dir: join_paths(sysconfdir, 'fwupd', 'remotes.d'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd', 'remotes.d'),
   )
   i18n.merge_file(
     input: 'lvfs.metainfo.xml',
@@ -52,12 +52,12 @@ configure_file(
   output: 'vendor.conf',
   configuration: con2,
   install: get_option('vendor_metadata'),
-  install_dir: join_paths(sysconfdir, 'fwupd', 'remotes.d'),
+  install_dir: join_paths(sysconfdir_install, 'fwupd', 'remotes.d'),
 )
 configure_file(
   input: 'vendor-directory.conf',
   output: 'vendor-directory.conf',
   configuration: con2,
   install: true,
-  install_dir: join_paths(sysconfdir, 'fwupd', 'remotes.d'),
+  install_dir: join_paths(sysconfdir_install, 'fwupd', 'remotes.d'),
 )

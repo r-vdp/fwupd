@@ -124,7 +124,7 @@ if build_docs
     ],
     build_by_default: true,
     install: true,
-    install_dir: join_paths(datadir, 'doc'),
+    install_dir: join_paths(sysconfdir_install, 'doc'),
   )
 
   subdir('hsi-tests.d')
@@ -182,7 +182,7 @@ if build_docs
     ],
     build_by_default: true,
     install: true,
-    install_dir: join_paths(datadir, 'doc'),
+    install_dir: join_paths(sysconfdir_install, 'doc'),
   )
   man_cmd = []
   foreach man: man_md
@@ -196,7 +196,7 @@ if build_docs
       man_cmd,
     ],
     install: true,
-    install_dir: join_paths(datadir, 'doc', 'fwupd')
+    install_dir: join_paths(sysconfdir_install, 'doc', 'fwupd')
   )
   if hsi
     install_data(['hsi.html'],
@@ -204,18 +204,18 @@ if build_docs
     )
   endif
   install_data(['urlmap_fwupd.js'],
-    install_dir: join_paths(datadir, 'doc', 'libfwupd')
+    install_dir: join_paths(sysconfdir_install, 'doc', 'libfwupd')
   )
   install_data(['urlmap_fwupdplugin.js'],
-    install_dir: join_paths(datadir, 'doc', 'libfwupdplugin')
+    install_dir: join_paths(sysconfdir_install, 'doc', 'libfwupdplugin')
   )
   #make devhelp work
   install_symlink('libfwupd',
-    install_dir: join_paths(datadir, 'doc', 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'doc', 'fwupd'),
     pointing_to: join_paths('..', 'libfwupd'),
   )
   install_symlink('libfwupdplugin',
-    install_dir: join_paths(datadir, 'doc', 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'doc', 'fwupd'),
     pointing_to: join_paths('..', 'libfwupdplugin'),
   )
 endif

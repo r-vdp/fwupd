@@ -27,7 +27,7 @@ endif
 
 if build_standalone
   install_data(['fwupd.conf'],
-    install_dir: join_paths(sysconfdir, 'fwupd'),
+    install_dir: join_paths(sysconfdir_install, 'fwupd'),
     install_mode: 'rw-r-----',
   )
   plugin_quirks += files([
