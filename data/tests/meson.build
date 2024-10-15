@@ -105,7 +105,7 @@ configure_file(
   output: 'fwupd-tests.conf',
   configuration: con2,
   install: true,
-  install_dir: join_paths(datadir, 'fwupd', 'remotes.d'),
+  install_dir: join_paths(get_option('installed_test_prefix'), 'etc', 'fwupd', 'remotes.d'),
 )
 
 if umockdev_integration_tests.allowed()

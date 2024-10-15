@@ -333,6 +333,10 @@ option('systemd_syscall_filter',
   value: 'true',
   description: 'Enable systemd syscall filter',
 )
+option('installed_test_prefix',
+  type: 'string',
+  description: 'Prefix for installed tests'
+)
 option('tests',
   type: 'boolean',
   value: true,

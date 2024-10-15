@@ -194,8 +194,8 @@ else
   datadir = join_paths(prefix, get_option('datadir'))
   sysconfdir = join_paths(prefix, get_option('sysconfdir'))
   localstatedir = join_paths(prefix, get_option('localstatedir'))
-  installed_test_bindir = join_paths(libexecdir, 'installed-tests', meson.project_name())
-  installed_test_datadir = join_paths(datadir, 'installed-tests', meson.project_name())
+  installed_test_bindir = join_paths(get_option('installed_test_prefix'), 'libexec', 'installed-tests', meson.project_name())
+  installed_test_datadir = join_paths(get_option('installed_test_prefix'), 'share', 'installed-tests', meson.project_name())
   daemon_dir = join_paths(libexecdir, 'fwupd')
 endif
 mandir = join_paths(prefix, get_option('mandir'))
@@ -545,6 +545,7 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 conf.set_quoted('FWUPD_PREFIX', prefix)
+conf.set_quoted('FWUPD_INSTALLED_TEST_PREFIX', get_option('installed_test_prefix'))
 conf.set_quoted('FWUPD_BINDIR', bindir)
 conf.set_quoted('FWUPD_LIBDIR', libdir)
 conf.set_quoted('FWUPD_LIBEXECDIR', libexecdir)
