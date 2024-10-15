@@ -9,7 +9,7 @@ if build_standalone
       command: [gzip, '-k', '--stdout', '@INPUT@'],
       install: true,
       install_tag: 'tests',
-      install_dir: join_paths(datadir, 'fwupd', 'host-emulate.d'),
+      install_dir: join_paths(get_option('installed_test_prefix'), 'etc', 'fwupd', 'host-emulate.d'),
     )
   endforeach
 endif
