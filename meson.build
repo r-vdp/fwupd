@@ -486,7 +486,7 @@ endif
 
 # EFI
 if build_standalone
-  efi_app_location = join_paths(libexecdir, 'fwupd', 'efi')
+  efi_app_location = join_paths(dependency('fwupd-efi').get_variable(pkgconfig: 'prefix'), 'libexec', 'fwupd', 'efi')
   conf.set_quoted('EFI_APP_LOCATION', efi_app_location)
   if host_cpu == 'x86'
     EFI_MACHINE_TYPE_NAME = 'ia32'
