@@ -557,7 +557,7 @@ if build_standalone
 if host_machine.system() == 'windows'
   libdir_pkg = bindir
 else
-  libdir_pkg = join_paths(libdir, 'fwupd-@0@'.format(fwupd_version))
+  libdir_pkg = join_paths(prefix, 'lib', 'fwupd-@0@'.format(fwupd_version))
 endif
 conf.set_quoted('FWUPD_LIBDIR_PKG', libdir_pkg)
 endif
